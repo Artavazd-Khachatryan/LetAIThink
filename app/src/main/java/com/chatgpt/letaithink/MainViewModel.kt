@@ -58,15 +58,13 @@ class MainViewModel : ViewModel() {
     }
 
     fun onLogout() {
-        showScreen(LoginScreen)
+        // Login is disabled; keep users in the app.
+        showScreen(ChatsHistory)
     }
 
     private suspend fun showCorrespondingScreen() {
-        if (!UserRepository.isUserAuthenticated()) {
-            showScreen(LoginScreen)
-        } else {
-            showScreen(ChatsHistory)
-        }
+        // Login is disabled; always start in the app.
+        showScreen(ChatsHistory)
     }
 
     private fun showScreen(screen: Screen) {
