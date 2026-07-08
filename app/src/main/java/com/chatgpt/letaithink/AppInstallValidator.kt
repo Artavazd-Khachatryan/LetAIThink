@@ -36,12 +36,12 @@ object AppInstallValidator {
             packageManager.getPackageInfo(
                 packageName,
                 PackageManager.GET_SIGNATURES
-            ).signatures.firstOrNull()
+            ).signatures?.firstOrNull()
         } else {
             packageManager.getPackageInfo(
                 packageName,
                 PackageManager.GET_SIGNING_CERTIFICATES
-            ).signingInfo.apkContentsSigners.firstOrNull()
+            ).signingInfo?.apkContentsSigners?.firstOrNull()
         }
 
     private fun Signature.encrypt(): String? = try {

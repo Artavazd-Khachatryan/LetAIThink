@@ -5,11 +5,11 @@ plugins {
 
 android {
     namespace 'com.openai.api'
-    compileSdk 34
+    compileSdk 37
 
     defaultConfig {
         minSdk 26
-        targetSdk 34
+        targetSdk 37
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
