@@ -21,3 +21,12 @@
 #-renamesourcefileattribute SourceFile
 
 -keep class com.chatgpt.letaithink.model.** { <fields>; }
+
+# OkHttp may reference optional security providers via reflection. These are not
+# required on Android devices, so silence shrinker warnings/errors.
+-dontwarn org.bouncycastle.jsse.**
+-dontwarn org.conscrypt.**
+-dontwarn org.openjsse.**
+
+# Some dependencies use SLF4J API without shipping an Android binding.
+-dontwarn org.slf4j.impl.StaticLoggerBinder

@@ -17,7 +17,9 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled true
+            // This module is consumed by :app. Shrinking here can remove classes that
+            // are only referenced from the app and cause R8 "missing class" failures.
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
